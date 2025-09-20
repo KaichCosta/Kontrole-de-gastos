@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <a href="">&#10094;</a>
+        <h1 id="titulo">NOVA DESPESA</h1>
+
+        <section id="seletor-data">
+            <button>
+                <img id="calendario" src="assets/calendario.png" alt="calendario">
+                <p>DATA</p>
+            </button>
+        </section>
+
+        <section id="data-automatica"><!-- aqui é onde mostra o que escolhi no button de cima -->
+            <input type="date">
+            </input>
+        </section>
+
+        <section id="descricao-despesa">
+            <input type="text" placeholder="Digite a descrição detalhada da compra" id="descricao"> 
+        </section>
+
+        <section>
+            <button id="seletor-valor">
+                <img src="assets/dinheiro.png" alt="icone moeda">
+            <!-- aqui tem que abrir um alert para inserir valor e atualizar no cantinho dessa section-->
+                <p id="valor">0,00</p>
+            </button>
+        </section>
+
+        <section id="labels">
+            <h2 id="label-metodo-pagamento">METODO DE PAGAMENTO</h2>
+            <h2 id="label-tipo-gasto">TIPO DE GASTO</h2>
+        </section>
+        <section id="seletor-metodo-pagamento">
+            <button><img src="assets/cartao.png" alt="opção de pagamento em credito"></button>
+            <button><img src="#" alt="opção de pagamento em dinheiro"></button>
+            <button><img src="#" alt="opção de pagamento em pix"></button>
+        </section>
+
+        <section id="seletor-tipo-de-gasto">
+            <button><img src="#" alt="opção de gasto em investimento"></button>
+            <button><img src="#" alt="opção de gasto em lazer"></button>
+            <button><img src="#" alt="opção de gasto em fixos"></button>
+        </section>
+
+        <section id="botoes">
+            <button type="reset">CANCELAR</button>
+            <button><a href="pages/historico.html">HISTÓRICO</a></button>
+            <button type="submit">SALVAR</button>
+        </section>
+
+        <footer>
+            <p id="creditos">Desenvolvido por © 2025 <a href="https://www.linkedin.com/in/kaich-h-costa/" target="_blank">Kaích Costa</a>
+            <a href="pages/creditos.html" target="_blank" rel="página de creditos e licenças">| Créditos</a><p>
+        </footer>
+
+
+    </main>
+</body>
+</html>

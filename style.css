@@ -41,8 +41,11 @@ section {
 }
 
 img {
-    width: 44px;
-    height: 44px;
+    width: 35px;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
 }
 
 #seletor-data {
@@ -115,12 +118,122 @@ img {
     font-family: var(--fonte-secundaria);
     font-size: 16px;
     font-weight: 600;
+    margin-top: 30px;
 }
-#seletor-metodo-pagamento {
+
+#label-tipo-gasto {
+    color: var(--cor1);
+    font-family: var(--fonte-secundaria);
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+#seletor-metodo-pagamento, #seletor-tipo-de-gasto {
     width: 386px;
     height: 40px;
     display: flex;
-    margin-top: 30px;
+    margin-top: 10px;
     background-color: #D5EF75;
     border-radius: 10px;
+}
+
+#cartao, #dinheiro-nota, #pix {
+    border: none;
+    cursor: pointer;
+    width: 65px;
+    display: flex;
+}
+/*colocar efeito de destaque com hover nos button*/
+#investimento, #nao-essencial, #fixos {
+    border: none;
+    cursor: pointer;
+    width: 60px;
+    display: flex;
+}
+
+#cartao, #fixos {
+    background-color: var(--cor1);
+}
+
+#cartao {
+    border-radius: 10px 0 0 10px;
+}
+
+#dinheiro-nota, #nao-essencial {
+    background-color: var(--cor2);
+}
+
+#pix, #investimento {
+    background-color: var(--cor3);
+}
+
+#investimento {
+    border-radius: 10px 0 0 10px;
+}
+
+#investimento img {
+    width: 30px;
+}
+
+#nao-essencial img {
+    width: 50px;
+    height: 42px;
+}
+
+#fixos img{
+    width: 30px;
+}
+
+#botoes {
+    margin-top: 45px;
+}
+
+#btn-cancelar {
+    display: inline-flex;
+    border: none;
+    margin-right: 33px;
+    height: 60px;
+    padding: 20px 9px 20px 8px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px 10px 10px 25px;
+    background: var(--cor1);
+    color: #f5f5f5;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#btn-historico {
+    display: inline-flex;
+    border: none;
+    margin-right: 33px;
+    height: 60px;
+    padding: 20px 8px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: var(--cor3);
+    
+}
+
+#btn-historico a {
+    color: #f5f5f5;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+}/*colocar hover aquii (arrumar hover e animation de toda a pagina de uma vez)*/
+
+#btn-salvar {
+    display: inline-flex;
+    border: none;
+    height: 60px;
+    padding: 20px 22px 20px 21px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 25px 25px 10px;
+    background: #D5EF75;
+    color: var(--cor1);
+    font-size: 16px;
+    font-weight: 700;
 }

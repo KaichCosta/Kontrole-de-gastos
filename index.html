@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+45<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -17,8 +18,8 @@
         <section id="seletor-data">
             <button>
                 <img id="calendario" src="assets/calendario.png" alt="calendario">
-                <p>DATA</p>
             </button>
+            <p>DATA</p>
         </section>
 
         <section id="data-automatica"><!-- aqui é onde mostra o que escolhi no button de cima -->
@@ -27,15 +28,16 @@
         </section>
 
         <section id="descricao-despesa">
-            <input type="text" placeholder="Digite a descrição detalhada da compra" id="descricao"> 
+            <textarea name="descricao" maxlength="200" placeholder="Digite a descrição detalhada da compra" id="descricao"> </textarea> 
         </section>
 
-        <section>
-            <button id="seletor-valor">
+        <section id="seletor-valor">
+            <button>
                 <img src="assets/dinheiro.png" alt="icone moeda">
             <!-- aqui tem que abrir um alert para inserir valor e atualizar no cantinho dessa section-->
-                <p id="valor">0,00</p>
             </button>
+            <p>VALOR</p> <p id="valor">0,00</p>
+            <p>seta-pra-direita ></p>
         </section>
 
         <section id="labels">

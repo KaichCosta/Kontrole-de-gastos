@@ -16,15 +16,11 @@
         <h1 id="titulo">NOVA DESPESA</h1>
 
         <section id="seletor-data">
-            <button>
-                <img id="calendario" src="assets/calendario.png" alt="calendario">
-            </button>
-            <p>DATA</p>
-        </section>
-
-        <section id="data-automatica"><!-- aqui é onde mostra o que escolhi no button de cima -->
-            <input type="date">
-            </input>
+            <label for="campo-data" class="rotulo-data">DATA</label>
+            <input type="text" id="exibicao-data-despesa" placeholder="dd/mm/aaaa" class="campo-exibicao-data" readonly>
+            <input type="date" id="entrada-data-oculta" class="entrada-data-escondida">
+            <img id="calendario" src="assets/calendario.png" alt="calendario">
+            <span class="icone-seta">></span>
         </section>
 
         <section id="descricao-despesa">
@@ -37,7 +33,7 @@
             <!-- aqui tem que abrir um alert para inserir valor e atualizar no cantinho dessa section-->
             </button>
             <p>VALOR</p> <p id="valor">0,00</p>
-            <p>seta-pra-direita ></p>
+            <span class="icone-seta">></span>
         </section>
 
         <section id="labels">

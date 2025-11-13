@@ -1,5 +1,5 @@
 
-45<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -16,11 +16,10 @@
         <h1 id="titulo">NOVA DESPESA</h1>
 
         <section id="seletor-data">
-            <label for="campo-data" class="rotulo-data">DATA</label>
-            <input type="text" id="exibicao-data-despesa" placeholder="dd/mm/aaaa" class="campo-exibicao-data" readonly>
-            <input type="date" id="entrada-data-oculta" class="entrada-data-escondida">
             <img id="calendario" src="assets/calendario.png" alt="calendario">
-            <span class="icone-seta">></span>
+            <input type="text" id="exibicao-data-despesa" placeholder="dd/mm/aaaa" readonly>
+            <input type="date" id="entrada-data-oculta" class="entrada-data-escondida">
+            <span class="icone-seta-pra-direita">&#10095;</span>
         </section>
 
         <section id="descricao-despesa">
@@ -28,12 +27,11 @@
         </section>
 
         <section id="seletor-valor">
-            <button>
-                <img src="assets/dinheiro.png" alt="icone moeda">
-            <!-- aqui tem que abrir um alert para inserir valor e atualizar no cantinho dessa section-->
-            </button>
-            <p>VALOR</p> <p id="valor">0,00</p>
-            <span class="icone-seta">></span>
+            <img src="assets/dinheiro.png" alt="icone moeda">
+            <!-- aqui tem que abrir um modal ou input para inserir valor e atualizar no cantinho dessa section-->
+            <label for="valor" id="label-valor" >VALOR</label>
+            <input type="number" placeholder="0" id="valor"></input>
+            <span class="icone-seta-pra-direita">&#10095;</span>
         </section>
 
         <section id="labels">
@@ -53,17 +51,17 @@
         </section>
 
         <section id="botoes">
+            <!--trocar para radio button-->
             <button type="reset" id="btn-cancelar" >CANCELAR</button>
             <button id="btn-historico"> <a href="pages/historico.html">HISTÓRICO</a></button>
             <button type="submit" id="btn-salvar">SALVAR</button>
         </section>
+    </main>
 
         <footer>
             <p id="creditos">Desenvolvido por © 2025 <a href="https://www.linkedin.com/in/kaich-h-costa/" target="_blank">Kaích Costa</a>
             <a href="pages/creditos.html" target="_blank" rel="página de creditos e licenças">| Créditos</a><p>
         </footer>
-
-
-    </main>
 </body>
+<script src="script.js"></script>
 </html>

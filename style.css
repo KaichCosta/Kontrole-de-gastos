@@ -13,7 +13,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--fonte-principal);
+    font-family: var(--fonte-secundaria);
 }
 
 html, body {
@@ -53,42 +53,36 @@ img {
     margin-top: 37px;
     background-color: #87c42581;
     border-radius: 20px;
-    display: flex;
     cursor: pointer;
     position: relative;
+    transition: background-color 0.2s ease;
+}
 
+#seletor-data:hover {
+    background-color: #87c425c5;
+}
+
+#seletor-data:active {
+    background-color: #6e9f1e81;
 }
 
 #calendario { /*olhar se gasta mais alterção css*/
     margin-left: 24px;
 }
 
-.rotulo-data {
-    color: #FFF;
-    font-family: "Open Sans";
-    font-size: 16px;
-    font-weight: 600;
-    position: relative;
-    margin-left: 8px;
-}
-
-#seletor-data input {
-    border: none;
+#exibicao-data-despesa {
+    /*flex-grow: 1; /* Faz o input ocupar o espaço restante */
     background: none;
-    margin-left: 24px;
+    border: none;
+    width: 95px ;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    
 }
 
-.campo-exibicao-data {
-    flex-grow: 1; /* Faz o input ocupar o espaço restante */
-    background: none; /* Sem fundo */
-    border: none; /* Sem borda */
-    color: white; /* Cor do texto da data */
-    font-size: 16px;
-    padding: 0; /* Remove padding padrão */
-    outline: none; /* Remove outline ao focar */
-}
-.campo-exibicao-data::placeholder {
-    color: rgba(255, 255, 255, 0.7); /* Cor do placeholder */
+#exibicao-data-despesa::placeholder {
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /* Esconde o input "date" real */
@@ -101,7 +95,7 @@ img {
     opacity: 0;
     cursor: pointer;
     -webkit-appearance: none;/* remove o ícone de calendário padrão em Webkit (Chrome, Safari, Edge) */
-    appearance: none; /* Remove a estilização padrão do navegador */
+    appearance: none; /* Remove o jeito padrão do navegador */
 }
 
 /* Remove o ícone de calendário padrão para Firefox */
@@ -112,51 +106,71 @@ img {
     display: none; /* Esconde o indicador de calendário no Firefox */
 }
 
-.icone-seta {
+.icone-seta-pra-direita {
     color: white;
     font-weight: bold;
-    margin-left: 10px; /* Espaçamento da seta */
+    margin: 0 24px 0 10px; /* Espaçamento da seta */
 }
 
 #descricao-despesa {
     width: 386px;
     height: 140px;
-    display: flex;
     margin-top: 30px;
     background-color: #f5f5f5;
     border-radius: 10px;
+    transition: background-color 0.2s ease;
 }
 
-#descricao {
+#descricao-despesa textarea {
     width: 100%;
     padding-left: 10px;
     padding-top: 15px;
     font-size: 1em;
     border-radius: 10px;
+    outline: none;
+    transition: background-color 0.2s ease;
+}
+
+#descricao-despesa textarea:hover {
+    background-color: #ededed;
+}
+
+#descricao-despesa textarea:focus {
+    background-color: #dcdbdb;
 }
 
 #seletor-valor {
     width: 386px;
     height: 70px;
     margin-top: 30px;
-    background-color: #D3E6AD;
+    background-color: #d3e6ad;
     border-radius: 10px;
+    transition: background-color 0.2s ease;
 }
 
-#seletor-valor button {
-    background: none;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    cursor: pointer;
+#seletor-valor:hover {
+    background-color: #dff1bb;
+}
+
+#seletor-valor:active {
+    background-color: #cae88e;
 }
 
 #seletor-valor img {
     margin-left: 24px;
 }
 
-#seletor-valor p {
-    font-family: "Open Sans";
+#label-valor {
+    color: var(--cor1);
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+    margin-right: 10px;
+}
+
+#valor {
+    width: 40px;
+    height: 30px;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
@@ -164,13 +178,16 @@ img {
     align-items: center;
     margin-right: 33px;
     margin-left: auto;
+    outline: none;
+}
 
+#labels {
+    box-shadow: none;
 }
 
 #label-metodo-pagamento {
     margin-right: 68px;
     color: var(--cor1);
-    font-family: var(--fonte-secundaria);
     font-size: 16px;
     font-weight: 600;
     margin-top: 30px;
@@ -178,7 +195,6 @@ img {
 
 #label-tipo-gasto {
     color: var(--cor1);
-    font-family: var(--fonte-secundaria);
     font-size: 16px;
     font-weight: 600;
     margin-top: 30px;
@@ -191,6 +207,7 @@ img {
     margin-top: 10px;
     background-color: #D5EF75;
     border-radius: 10px;
+    box-shadow: none;
 }
 
 #cartao, #dinheiro-nota, #pix {
@@ -242,6 +259,7 @@ img {
 
 #botoes {
     margin-top: 45px;
+    box-shadow: none;
 }
 
 #btn-cancelar {
@@ -291,4 +309,9 @@ img {
     color: var(--cor1);
     font-size: 16px;
     font-weight: 700;
+}
+
+footer {
+    margin: 24px;
+    text-align: center;
 }

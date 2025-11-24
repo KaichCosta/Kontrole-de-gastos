@@ -23,14 +23,14 @@
         </section>
 
         <section id="descricao-despesa">
-            <textarea name="descricao" maxlength="200" placeholder="Digite a descrição detalhada da compra" id="descricao"> </textarea> 
+            <textarea name="descricao" maxlength="200" placeholder="Digite a descrição detalhada da compra" id="descricao"></textarea> 
         </section>
 
         <section id="seletor-valor">
             <img src="assets/dinheiro.png" alt="icone moeda">
             <!-- aqui tem que abrir um modal ou input para inserir valor e atualizar no cantinho dessa section-->
             <label for="valor" id="label-valor" >VALOR</label>
-            <input type="number" placeholder="0" id="valor"></input>
+            <input type="tel" placeholder="R$ 0,00" id="valor" maxlength="10" inputmode="numeric" autocomplete="off"></input>
             <span class="icone-seta-pra-direita">&#10095;</span>
         </section>
 
@@ -38,16 +38,29 @@
             <h2 id="label-metodo-pagamento">METODO DE PAGAMENTO</h2>
             <h2 id="label-tipo-gasto">TIPO DE GASTO</h2>
         </section>
-        <section id="seletor-metodo-pagamento">
-            <button id="cartao"><img src="assets/cartao.png" alt="opção de pagamento em credito"></button>
-            <button id="dinheiro-nota"><img src="assets/dinheiro-nota.png" alt="opção de pagamento em dinheiro"></button>
-            <button id="pix"><img src="assets/pix.png" alt="opção de pagamento em pix"></button>
+
+        <section id="seletor-metodo-pagamento" class="grupo-botoes pagamento">
+            <button id="cartao" class="btn-opcao">
+                <img src="assets/cartao.png" alt="Crédito">
+            </button>
+            <button id="dinheiro-nota" class="btn-opcao">
+                <img src="assets/dinheiro-nota.png" alt="Dinheiro">
+            </button>
+            <button id="pix" class="btn-opcao">
+                <img src="assets/pix.png" alt="Pix">
+            </button>
         </section>
 
-        <section id="seletor-tipo-de-gasto">
-            <button id="investimento"><img src="assets/investimento.png" alt="opção de gasto em investimento"></button>
-            <button id="nao-essencial"><img src="assets/nao-essencial.png" alt="opção de gasto em lazer"></button>
-            <button id="fixos"><img src="assets/boleto.png" alt="opção de gasto em fixos"></button>
+        <section id="seletor-tipo-de-gasto" class="grupo-botoes gastos">
+            <button id="investimento" class="btn-opcao">
+                <img src="assets/investimento.png" alt="Investimento">
+            </button>
+            <button id="nao-essencial" class="btn-opcao">
+                <img src="assets/nao-essencial.png" alt="Lazer">
+            </button>
+            <button id="fixos" class="btn-opcao">
+                <img src="assets/boleto.png" alt="Fixos">
+            </button>
         </section>
 
         <section id="botoes">

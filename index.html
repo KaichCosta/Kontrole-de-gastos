@@ -12,14 +12,14 @@
 </head>
 <body>
     <main>
-        <a href="">&#10094;</a>
+        <span id="icone-seta-retorno">&#10094;</span>
         <h1 id="titulo">NOVA DESPESA</h1>
 
         <section id="seletor-data">
             <img id="calendario" src="assets/calendario.png" alt="calendario">
             <input type="text" id="exibicao-data-despesa" placeholder="dd/mm/aaaa" readonly>
             <input type="date" id="entrada-data-oculta" class="entrada-data-escondida">
-            <span class="icone-seta-pra-direita">&#10095;</span>
+            <span id="icone-seta-data">&#10095;</span>
         </section>
 
         <section id="descricao-despesa">
@@ -31,7 +31,7 @@
             <!-- aqui tem que abrir um modal ou input para inserir valor e atualizar no cantinho dessa section-->
             <label for="valor" id="label-valor" >VALOR</label>
             <input type="tel" placeholder="R$ 0,00" id="valor" maxlength="10" inputmode="numeric" autocomplete="off"></input>
-            <span class="icone-seta-pra-direita">&#10095;</span>
+            <span id="icone-seta-valor">&#10095;</span>
         </section>
 
         <section id="labels">
@@ -40,30 +40,30 @@
         </section>
 
         <section id="seletor-metodo-pagamento" class="grupo-botoes pagamento">
-            <button id="cartao" class="btn-opcao">
+            <button id="cartao" class="btn-verde-cor1">
                 <img src="assets/cartao.png" alt="Crédito">
             </button>
-            <button id="dinheiro-nota" class="btn-opcao">
+            <button id="dinheiro-nota" class="btn-verde-cor2">
                 <img src="assets/dinheiro-nota.png" alt="Dinheiro">
             </button>
-            <button id="pix" class="btn-opcao">
+            <button id="pix" class="btn-verde-cor3">
                 <img src="assets/pix.png" alt="Pix">
             </button>
         </section>
 
         <section id="seletor-tipo-de-gasto" class="grupo-botoes gastos">
-            <button id="investimento" class="btn-opcao">
+            <button id="investimento" class="btn-verde-cor3">
                 <img src="assets/investimento.png" alt="Investimento">
             </button>
-            <button id="nao-essencial" class="btn-opcao">
+            <button id="nao-essencial" class="btn-verde-cor2">
                 <img src="assets/nao-essencial.png" alt="Lazer">
             </button>
-            <button id="fixos" class="btn-opcao">
+            <button id="fixos" class="btn-verde-cor1">
                 <img src="assets/boleto.png" alt="Fixos">
             </button>
         </section>
 
-        <section id="botoes">
+        <section id="botoes-fim">
             <!--trocar para radio button-->
             <button type="reset" id="btn-cancelar" >CANCELAR</button>
             <button id="btn-historico"> <a href="pages/historico.html">HISTÓRICO</a></button>

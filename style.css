@@ -27,7 +27,15 @@ main {
     flex-direction: column;
 }
 
+#icone-seta-retorno {
+    color: white;
+    font-weight: bold;
+    margin: 0px 24px 0px 10px; /* Espaçamento da seta */
+    cursor: pointer;
+}
+
 h1 {
+    margin-right: 0px;
     width: 239px;
     height: 39px;
     font-family: var(--fonte-principal);
@@ -106,10 +114,11 @@ img {
     display: none; /* Esconde o indicador de calendário no Firefox */
 }
 
-.icone-seta-pra-direita {
+#icone-seta-data {
     color: white;
     font-weight: bold;
-    margin: 0 24px 0 10px; /* Espaçamento da seta */
+    margin: auto 24px auto 10px; /* Espaçamento da seta */
+    cursor: pointer;
 }
 
 #descricao-despesa {
@@ -193,10 +202,18 @@ img {
     opacity: 0.9;
 }
 
+#icone-seta-valor {
+    color: var(--cor2);
+    font-weight: bold;
+    margin: auto 24px auto 10px; /* Espaçamento da seta */
+    cursor: pointer;
+}
+
 #labels {
     box-shadow: none;
 }
 
+/*titulo metodo-pagamento*/
 #label-metodo-pagamento {
     margin-right: 68px;
     color: var(--cor1);
@@ -205,6 +222,7 @@ img {
     margin-top: 30px;
 }
 
+/*titulo tipo-gasto*/
 #label-tipo-gasto {
     color: var(--cor1);
     font-size: 16px;
@@ -212,6 +230,7 @@ img {
     margin-top: 30px;
 }
 
+/*section metodo-pagamento e tipo-de-gasto*/
 #seletor-metodo-pagamento, #seletor-tipo-de-gasto {
     width: 386px;
     height: 40px;
@@ -222,6 +241,7 @@ img {
     box-shadow: none;
 }
 
+/*botoes de metodos de pagamento*/
 #cartao, #dinheiro-nota, #pix {
     border: none;
     cursor: pointer;
@@ -230,6 +250,7 @@ img {
     transition: background-color 0.2s ease;
 }
 /*colocar efeito de destaque com hover nos button*/
+/*botoes de tipos de gasto*/
 #investimento, #nao-essencial, #fixos {
     border: none;
     cursor: pointer;
@@ -238,33 +259,8 @@ img {
     transition: background-color 0.2s ease;
 }
 
-#cartao, #fixos {
-    background-color: var(--cor1);
-}
-
 #cartao {
     border-radius: 10px 0 0 10px;
-}
-
-#dinheiro-nota, #nao-essencial {
-    background-color: var(--cor2);
-}
-
-#pix, #investimento {
-    background-color: var(--cor3);
-}
-
-#investimento {
-    margin-left: auto;
-}
-
-#investimento img {
-    width: 30px;
-}
-
-#nao-essencial img {
-    width: 50px;
-    height: 42px;
 }
 
 #fixos {
@@ -274,7 +270,59 @@ img {
     width: 30px;
 }
 
-#botoes {
+/*alteração de cor em btn #cartao e #fixos*/
+    .btn-verde-cor1 {
+        background-color: var(--cor1);
+    }
+
+    .btn-verde-cor1:hover {
+        background-color: #228186;
+    }
+
+    .btn-verde-cor1:active {
+        background-color: #165458;
+    }
+
+#nao-essencial img {
+    width: 50px;
+    height: 42px;
+}
+
+/*alteração de cor em btn #dinheiro-nota e #nao-essencial*/
+    .btn-verde-cor2 {
+        background-color: var(--cor2);
+    }
+
+    .btn-verde-cor2:hover {
+        background-color: #5ba551;
+    }
+
+    .btn-verde-cor2:active {
+        background-color: #4a8841;
+    }
+
+#investimento {
+    margin-left: auto;
+}
+
+#investimento img {
+    width: 30px;
+}
+
+/*alteração de cor em btn #pix e #investimento*/
+    .btn-verde-cor3 {
+        background-color: var(--cor3);
+    }
+
+    .btn-verde-cor3:hover {
+        background-color: #94d728;
+    }
+
+    .btn-verde-cor3:active {
+        background-color: #7ab122;
+    }
+
+#botoes-fim {
     margin-top: 45px;
     box-shadow: none;
 }
@@ -292,6 +340,16 @@ img {
     color: #f5f5f5;
     font-size: 16px;
     font-weight: 700;
+    cursor: pointer;
+}
+
+#btn-cancelar:hover {
+    background-color: #228186;
+}
+
+#btn-cancelar:active {
+    background-color: #165458;
+    box-shadow: 1px 1px 10px #00000060;
 }
 
 #btn-historico {
@@ -304,7 +362,16 @@ img {
     align-items: center;
     border-radius: 10px;
     background: var(--cor3);
-    
+    cursor: pointer;
+}
+
+#btn-historico:hover {
+    background-color: #94d728;
+}
+
+#btn-historico:active {
+    background-color: #7ab122;
+    box-shadow: 1px 1px 10px #00000060;
 }
 
 #btn-historico a {
@@ -326,6 +393,16 @@ img {
     color: var(--cor1);
     font-size: 16px;
     font-weight: 700;
+    cursor: pointer;
+}
+
+#btn-salvar:hover {
+    background-color: #ddf87d;
+}
+
+#btn-salvar:active {
+    background-color: #cbe56e;
+    box-shadow: 1px 1px 10px #00000060;
 }
 
 footer {

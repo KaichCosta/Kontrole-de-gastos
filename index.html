@@ -8,72 +8,80 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <title>Document</title>
 </head>
 <body>
     <main>
-        <span id="icone-seta-retorno">&#10094;</span>
-        <h1 id="titulo">NOVA DESPESA</h1>
+        <header>
+            <span id="icone-seta-retorno">&#10094;</span>
+            <h1 id="titulo">NOVA DESPESA</h1>
+        </header>
 
-        <section id="seletor-data">
-            <img id="calendario" src="assets/calendario.png" alt="calendario">
+        <div id="seletor-data">
+            <i id="calendario" class="ph ph-calendar-blank" aria-label="calendario"></i>
             <input type="text" id="exibicao-data-despesa" placeholder="dd/mm/aaaa" readonly>
             <input type="date" id="entrada-data-oculta" class="entrada-data-escondida">
             <span id="icone-seta-data">&#10095;</span>
-        </section>
+        </div>
 
-        <section id="descricao-despesa">
+        <div id="descricao-despesa">
             <textarea name="descricao" maxlength="200" placeholder="Digite a descrição detalhada da compra" id="descricao"></textarea> 
-        </section>
+        </div>
 
-        <section id="seletor-valor">
-            <img src="assets/dinheiro.png" alt="icone moeda">
+        <div id="seletor-valor">
+            <i id="icone-valor" class="ph ph-currency-dollar icone-valor"></i>
             <!-- aqui tem que abrir um modal ou input para inserir valor e atualizar no cantinho dessa section-->
             <label for="valor" id="label-valor" >VALOR</label>
             <input type="tel" placeholder="R$ 0,00" id="valor" maxlength="10" inputmode="numeric" autocomplete="off"></input>
             <span id="icone-seta-valor">&#10095;</span>
-        </section>
+        </div>
 
-        <section id="labels">
+        <div id="labels">
             <h2 id="label-metodo-pagamento">METODO DE PAGAMENTO</h2>
             <h2 id="label-tipo-gasto">TIPO DE GASTO</h2>
-        </section>
+        </div>
 
-        <section id="seletor-metodo-pagamento" class="grupo-botoes pagamento">
-            <button id="cartao" class="btn-verde-cor1">
-                <img src="assets/cartao.png" alt="Crédito">
+        <div id="seletor-metodo-pagamento" class="grupo-botoes pagamento">
+            <button id="cartao" class="btn-verde-cor1" aria-label="Cartão de Crédito">
+                <i class="ph ph-credit-card"></i>
             </button>
-            <button id="dinheiro-nota" class="btn-verde-cor2">
-                <img src="assets/dinheiro-nota.png" alt="Dinheiro">
+            <button id="dinheiro-nota" class="btn-verde-cor2" aria-label="Dinheiro">
+                <i class="ph ph-money"></i>
             </button>
-            <button id="pix" class="btn-verde-cor3">
-                <img src="assets/pix.png" alt="Pix">
+            <button id="pix" class="btn-verde-cor3" aria-label="Pix">
+                <i class="ph ph-pix-logo"></i>
             </button>
-        </section>
+        </div>
 
-        <section id="seletor-tipo-de-gasto" class="grupo-botoes gastos">
-            <button id="investimento" class="btn-verde-cor3">
-                <img src="assets/investimento.png" alt="Investimento">
+        <div id="seletor-tipo-de-gasto" class="grupo-botoes gastos">
+            <button id="investimento" class="btn-verde-cor1" aria-label="Investimento">
+                <i class="ph ph-trend-up"></i>
             </button>
-            <button id="nao-essencial" class="btn-verde-cor2">
-                <img src="assets/nao-essencial.png" alt="Lazer">
+            <button id="nao-essencial" class="btn-verde-cor3" aria-label="Não essenciais">
+                <i class="ph ph-shopping-cart"></i>
             </button>
-            <button id="fixos" class="btn-verde-cor1">
-                <img src="assets/boleto.png" alt="Fixos">
+            <button id="essenciais" class="btn-verde-cor2" aria-label="Essenciais">
+                <i class="ph ph-house"></i>
             </button>
-        </section>
 
-        <section id="botoes-fim">
+            <button id="fixos" class="btn-verde-cor1" aria-label="Boleto/Fixos">
+                <i class="ph ph-barcode"></i>
+            </button>
+        </div>
+
+        <div id="botoes-fim">
             <!--trocar para radio button-->
             <button type="reset" id="btn-cancelar" >CANCELAR</button>
             <button id="btn-historico"> <a href="pages/historico.html">HISTÓRICO</a></button>
             <button type="submit" id="btn-salvar">SALVAR</button>
-        </section>
+        </div>
     </main>
 
         <footer>
-            <p id="creditos">Desenvolvido por © 2025 <a href="https://www.linkedin.com/in/kaich-h-costa/" target="_blank">Kaích Costa</a>
-            <a href="pages/creditos.html" target="_blank" rel="página de creditos e licenças">| Créditos</a><p>
+            <p id="creditos">Desenvolvido por © 2025
+                <a href="https://www.linkedin.com/in/kaich-h-costa/" target="_blank">Kaích Costa</a>
+            <p>
         </footer>
 </body>
 <script src="script.js"></script>

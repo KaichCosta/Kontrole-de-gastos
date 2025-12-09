@@ -17,8 +17,15 @@
 }
 
 html, body {
-    height: 100%;
-    background-image: linear-gradient(to bottom, var(--cor1), var(--cor2), var(--cor3), var(--cor4), var(--cor5));
+    min-height: 100vh;
+    /*background-image: linear-gradient(to bottom, var(--cor1), var(--cor2), var(--cor3), var(--cor4), var(--cor5));
+    */
+    /*background-color: #22333b;*/
+    background: linear-gradient(180deg, #D9F585 0%, #4A7C59 100%);
+    background: linear-gradient(180deg, #1B676B 0%, #4FD1C5 100%);
+    background: linear-gradient(180deg,  #519548 30%, #0D2B2C 90%);
+    background: linear-gradient(180deg,  #0D2B2C 0%, #519548 100%);
+
 }
 
 main {
@@ -27,30 +34,52 @@ main {
     flex-direction: column;
 }
 
+header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    margin-top: 40px;
+    height: 60px;
+    width: 100%;
+}
+
 #icone-seta-retorno {
     color: white;
     font-weight: bold;
-    margin: 0px 24px 0px 10px; /* Espaçamento da seta */
     cursor: pointer;
+    z-index: 20; /* Aumentei pra garantir */
+    font-size: 24px;
 }
 
 h1 {
-    margin-right: 0px;
-    width: 239px;
-    height: 39px;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
     font-family: var(--fonte-principal);
     font-weight: 800;
     font-size: 28px;
     color: #f5f5f5;
+    pointer-events: none;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    line-height: 1;
+
 }
 
-section {
+div {
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;
 }
 
-img {
-    width: 35px;
+i {
+    font-size: 32px; 
+    color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: auto;
 }
 
@@ -63,23 +92,22 @@ img {
     border-radius: 20px;
     cursor: pointer;
     position: relative;
-    transition: background-color 0.2s ease;
+    transition: opacity 0.5s ease;
 }
 
 #seletor-data:hover {
-    background-color: #87c425c5;
+    opacity: 0.8;
 }
 
 #seletor-data:active {
     background-color: #6e9f1e81;
 }
 
-#calendario { /*olhar se gasta mais alterção css*/
+#calendario {
     margin-left: 24px;
 }
 
 #exibicao-data-despesa {
-    /*flex-grow: 1; /* Faz o input ocupar o espaço restante */
     background: none;
     border: none;
     width: 95px ;
@@ -117,7 +145,7 @@ img {
 #icone-seta-data {
     color: white;
     font-weight: bold;
-    margin: auto 24px auto 10px; /* Espaçamento da seta */
+    margin: auto 24px auto 10px;
     cursor: pointer;
 }
 
@@ -166,8 +194,12 @@ img {
     background-color: #cae88e;
 }
 
-#seletor-valor img {
-    margin-left: 24px;
+#icone-valor {
+    background-color: var(--cor2);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 20px;
 }
 
 #label-valor {
@@ -178,13 +210,7 @@ img {
     margin: auto;
 
 }
-/*#valor {
-    width: 40px;
-    height: 30px;
-    align-items: center;
-    margin-right: 33px;
-    margin-left: auto;
-}*/
+
 #valor {
     background: transparent;
     border: none;
@@ -251,7 +277,7 @@ img {
 }
 /*colocar efeito de destaque com hover nos button*/
 /*botoes de tipos de gasto*/
-#investimento, #nao-essencial, #fixos {
+#investimento, #nao-essencial, #essenciais, #fixos {
     border: none;
     cursor: pointer;
     width: 60px;
@@ -266,35 +292,28 @@ img {
 #fixos {
     border-radius: 0 10px 10px 0;
 }
-#fixos img{
-    width: 30px;
-}
 
-/*alteração de cor em btn #cartao e #fixos*/
+
+/*alteração de cor em btn #cartao #investimento e #fixos*/
     .btn-verde-cor1 {
         background-color: var(--cor1);
     }
 
     .btn-verde-cor1:hover {
-        background-color: #228186;
+        opacity: 0.9;
     }
 
     .btn-verde-cor1:active {
         background-color: #165458;
     }
 
-#nao-essencial img {
-    width: 50px;
-    height: 42px;
-}
-
-/*alteração de cor em btn #dinheiro-nota e #nao-essencial*/
+/*alteração de cor em btn #dinheiro-nota e #essencial*/
     .btn-verde-cor2 {
         background-color: var(--cor2);
     }
 
     .btn-verde-cor2:hover {
-        background-color: #5ba551;
+        opacity: 0.9;
     }
 
     .btn-verde-cor2:active {
@@ -305,17 +324,13 @@ img {
     margin-left: auto;
 }
 
-#investimento img {
-    width: 30px;
-}
-
-/*alteração de cor em btn #pix e #investimento*/
+/*alteração de cor em btn #pix e #nao-essencial*/
     .btn-verde-cor3 {
         background-color: var(--cor3);
     }
 
     .btn-verde-cor3:hover {
-        background-color: #94d728;
+        opacity: 0.9;
     }
 
     .btn-verde-cor3:active {
@@ -408,4 +423,24 @@ img {
 footer {
     margin: 24px;
     text-align: center;
+}
+
+#creditos {
+    font-size: 16px;
+    color: #f5f5f5;
+}
+
+#creditos a {
+    color: var(--cor3);
+    text-decoration: none;
+}
+
+#creditos a:hover{
+    color: var(--cor3);
+    text-decoration: underline;
+}
+
+#creditos a:active{
+    color: var(--cor2);
+    text-decoration: underline;
 }

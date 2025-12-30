@@ -71,7 +71,48 @@ document.addEventListener('DOMContentLoaded', () => {
             e.target.value = "";
         }
     });
+
+    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    // FIM DA LOGICA DO INPUT VALOR, INÍCIO LOGICA DO INPUT METODO PAGAMENTO
+    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    function selecionarOpcaoPagamento(idDoPagamento) {
+        console.log(">>> CLIQUE DETECTADO! ID: " + idDoPagamento);
+
+        // 2. Tenta achar o input
+        const inputEscondido = document.getElementById('metodo_pagamento_input');
+        
+        if (inputEscondido) {
+            inputEscondido.value = idDoPagamento;
+            console.log(">>> SUCESSO: Valor salvo no input: " + inputEscondido.value);
+            
+            // Um alerta visual chato pra ter certeza que funcionou
+            alert("FUNCIONOU! Você escolheu o ID: " + idDoPagamento);
+        } else {
+            console.error(">>> ERRO CRÍTICO: Não achei o input com id 'metodo_pagamento_input'");
+            alert("ERRO: O input sumiu!");
+        }
+    }
+
+
+    //const cartao = document.querySelector('#cartao')
+    //const dinheiro = document.querySelector('#dinheiro-nota')
+    //const pix = document.querySelector('#pix')
+    //cartao.addEventListener("click",() =>  {
+
+
+
+        
+
+        // 2. (Opcional, mas Recomendado) Feedback Visual
+        // adicionar uma borda ou cor para o usuário saber qual clicou
+        
+        
+        //remover a classe 'ativo' de todos e adicionar só no clicado
+
+
 });
+
+
 
 // adicionar um botão com simbolo de '?' que mostra como usar o app e os tipos de gasto e pagamento
 // quando for fazer a validação das escolhas no btn Salvar,

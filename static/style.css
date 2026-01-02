@@ -265,20 +265,26 @@ i {
     box-shadow: none;
 }
 
+#seletor-tipo-de-gasto {
+    justify-content: flex-end;
+}
+
 /*botoes de metodos de pagamento*/
 #cartao, #dinheiro-nota, #pix {
     border: none;
     cursor: pointer;
     width: 65px;
+    height: 100%;
     display: flex;
     transition: background-color 0.2s ease;
 }
-/*colocar efeito de destaque com hover nos button*/
+
 /*botoes de tipos de gasto*/
 #investimento, #nao-essencial, #essenciais, #fixos {
     border: none;
     cursor: pointer;
     width: 60px;
+    height: 100%;
     display: flex;
     transition: background-color 0.2s ease;
 }
@@ -291,49 +297,55 @@ i {
     border-radius: 0 10px 10px 0;
 }
 
-
 /*alteração de cor em btn #cartao #investimento e #fixos*/
-    .btn-verde-cor1 {
-        background-color: var(--cor1);
-    }
+.btn-verde-cor1 {
+    background-color: var(--cor1);
+}
 
-    .btn-verde-cor1:hover {
-        opacity: 0.9;
-    }
+.btn-verde-cor1:hover {
+    opacity: 0.9;
+}
 
-    .btn-verde-cor1:active {
-        background-color: #165458;
-    }
+.btn-verde-cor1:active {
+    background-color: #165458;
+}
 
 /*alteração de cor em btn #dinheiro-nota e #essencial*/
-    .btn-verde-cor2 {
-        background-color: var(--cor2);
-    }
+.btn-verde-cor2 {
+    background-color: var(--cor2);
+}
 
-    .btn-verde-cor2:hover {
-        opacity: 0.9;
-    }
+.btn-verde-cor2:hover {
+    opacity: 0.9;
+}
 
-    .btn-verde-cor2:active {
-        background-color: #4a8841;
-    }
+.btn-verde-cor2:active {
+    background-color: #4a8841;
+}
 
 #investimento {
     margin-left: auto;
 }
 
 /*alteração de cor em btn #pix e #nao-essencial*/
-    .btn-verde-cor3 {
-        background-color: var(--cor3);
-    }
+.btn-verde-cor3 {
+    background-color: var(--cor3);
+}
 
-    .btn-verde-cor3:hover {
-        opacity: 0.9;
-    }
+.btn-verde-cor3:hover {
+    opacity: 0.9;
+}
 
-    .btn-verde-cor3:active {
-        background-color: #7ab122;
-    }
+.btn-verde-cor3:active {
+    background-color: #7ab122;
+}
+
+/* Classe para destacar botao ativo*/
+.btn-ativo {
+    outline: 2px solid var(--cor5);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+    transform: scale(1.05);
+}
 
 #botoes-fim {
     margin-top: 45px;

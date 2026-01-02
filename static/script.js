@@ -92,22 +92,30 @@ document.addEventListener('DOMContentLoaded', () => {
             alert("ERRO: O input sumiu!");
         }
     }
+    
+    function ativarGrupo(seletor) {
+        const grupo = document.querySelector(seletor);
+        const labels = grupo.querySelectorAll('label');
 
+        labels.forEach(label => {
+            const input = label.querySelector('input');
+            const button = label.querySelector('button');
 
-    //const cartao = document.querySelector('#cartao')
-    //const dinheiro = document.querySelector('#dinheiro-nota')
-    //const pix = document.querySelector('#pix')
-    //cartao.addEventListener("click",() =>  {
+            label.addEventListener('click', () => {
+                // desativa todos do grupo
+                labels.forEach(l => {
+                    l.querySelector('button').classList.remove('btn-ativo');
+                });
 
+                // ativa o clicado
+                input.checked = true;
+                button.classList.add('btn-ativo');
+            });
+        });
+    }
 
-
-        
-
-        // 2. (Opcional, mas Recomendado) Feedback Visual
-        // adicionar uma borda ou cor para o usuário saber qual clicou
-        
-        
-        //remover a classe 'ativo' de todos e adicionar só no clicado
+    ativarGrupo('#seletor-metodo-pagamento');
+    ativarGrupo('#seletor-tipo-de-gasto');
 
 
 });

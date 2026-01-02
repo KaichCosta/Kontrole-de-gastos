@@ -12,10 +12,10 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/adicionar" method="post">
+    <form action="/adicionar" method="POST">
         <header>
             <div id="header-container">
-                <span id="icone-seta-retorno">&#10094;</span>
+                <a href="/" id="icone-seta-retorno" style="text-decoration:none; color:inherit;">&#10094;</a>
                 <h1 id="titulo">NOVA DESPESA</h1>
             </div>
         </header>
@@ -23,19 +23,18 @@
         <div id="seletor-data">
             <i id="calendario" class="ph ph-calendar-blank" aria-label="calendario"></i>
             <input type="text" id="exibicao-data-despesa" placeholder="dd/mm/aaaa" readonly>
-            <input type="date" name="data" id="entrada-data-oculta" class="entrada-data-escondida">
+            <input type="date" name="data" id="entrada-data-oculta" class="entrada-data-escondida" required>
             <span id="icone-seta-data">&#10095;</span>
         </div>
 
         <div id="descricao-despesa">
-            <textarea name="descricao" maxlength="200" placeholder="Digite a descrição detalhada da compra" id="descricao"></textarea> 
+            <textarea name="descricao" maxlength="200" placeholder="Digite a descrição detalhada da compra" id="descricao" required></textarea> 
         </div>
 
         <div id="seletor-valor">
             <i id="icone-valor" class="ph ph-currency-dollar icone-valor"></i>
-            <!-- aqui tem que abrir um modal ou input para inserir valor e atualizar no cantinho dessa section-->
             <label for="valor" id="label-valor" >VALOR</label>
-            <input type="tel" name="valor" placeholder="R$ 0,00" id="valor" maxlength="10" inputmode="numeric" autocomplete="off"></input>
+<!--voltar para type tel--><input type="number" step="0.01" name="valor" placeholder="0.00" id="valor" required>
             <span id="icone-seta-valor">&#10095;</span>
         </div>
 
@@ -44,51 +43,51 @@
             <h2 id="label-tipo-gasto">TIPO DE GASTO</h2>
         </div>
 
-        <input type="hidden" id="metodo_pagamento_input" name="metodo_pagamento" >
-
         <div id="seletor-metodo-pagamento" class="grupo-botoes pagamento" >
-            <button id="cartao" type="button" class="btn-verde-cor1" aria-label="Cartão de Crédito" onclick="selecionarOpcaoPagamento('3')">
-                <i class="ph ph-credit-card"></i>
-            </button>
-            <button id="dinheiro-nota" type="button" class="btn-verde-cor2" aria-label="Dinheiro" onclick="selecionarOpcaoPagamento('1')">
-                <i class="ph ph-money"></i>
-            </button>
-            <button id="pix" type="button" class="btn-verde-cor3" aria-label="Pix" onclick="selecionarOpcaoPagamento('2')">
-                <i class="ph ph-pix-logo"></i>
-            </button>
+            <label>
+                <input type="radio" name="metodo_pagamento" value="3" hidden required>
+                <div class="btn-verde-cor1" aria-label="Cartão de Crédito"> <i class="ph ph-credit-card"></i>
+                </div>
+            </label>
+
+            <label>
+                <input type="radio" name="metodo_pagamento" value="1" hidden>
+                <div class="btn-verde-cor2" aria-label="Dinheiro">
+                    <i class="ph ph-money"></i>
+                </div>
+            </label>
+
+            <label>
+                <input type="radio" name="metodo_pagamento" value="2" hidden>
+                <div class="btn-verde-cor3" aria-label="Pix">
+                    <i class="ph ph-pix-logo"></i>
+                </div>
+            </label>
         </div>
 
         <div id="seletor-tipo-de-gasto" class="grupo-botoes gastos">
-            <button id="investimento" class="btn-verde-cor1" aria-label="Investimento">
-                <i class="ph ph-trend-up"></i>
-            </button>
-            <button id="nao-essencial" class="btn-verde-cor3" aria-label="Não essenciais">
-                <i class="ph ph-shopping-cart"></i>
-            </button>
-            <button id="essenciais" class="btn-verde-cor2" aria-label="Essenciais">
-                <i class="ph ph-house"></i>
-            </button>
-
-            <button id="fixos" class="btn-verde-cor1" aria-label="Boleto/Fixos">
-                <i class="ph ph-barcode"></i>
-            </button>
-        </div>
+            <label>
+                <input type="radio" name="tipo_gasto" value="investimento" hidden>
+                <div class="btn-verde-cor1" aria-label="Investimento">
+                    <i class="ph ph-trend-up"></i>
+                </div>
+            </label>
+            </div>
 
         <div id="botoes-fim">
-            <!--trocar para radio button-->
-            <button type="reset" id="btn-cancelar" >CANCELAR</button>
-            <button id="btn-historico"> <a href="pages/historico.html">HISTÓRICO</a></button>
+            <button type="reset" id="btn-cancelar">CANCELAR</button>
+            <a href="pages/historico.html" id="btn-historico" style="display:inline-block; text-align:center; text-decoration:none;">HISTÓRICO</a>
             <button type="submit" id="btn-salvar">SALVAR</button>
         </div>
     </form>
 
-        <footer>
-            <p id="creditos">Desenvolvido por &copy; 2025</p>
-            <a href="https://www.linkedin.com/in/kaich-h-costa/" target="_blank">alterar link 
-                <img src="/assets/kode-sistemas.png" alt="logo">
-            </a>
-            
-        </footer>
+    <footer>
+        <p id="creditos">Desenvolvido por &copy; 2025</p>
+        <a href="https://www.linkedin.com/in/kaich-h-costa/" target="_blank">alterar link 
+            <img src="/assets/kode-sistemas.png" alt="logo">
+        </a>
+        
+    </footer>
 </body>
 <script src="/static/script.js"></script>
 </html>

@@ -15,7 +15,7 @@
     <form action="/adicionar" method="POST">
         <header>
             <div id="header-container">
-                <a href="/" id="icone-seta-retorno" style="text-decoration:none; color:inherit;">&#10094;</a>
+                <span id="icone-seta-retorno">&#10094;</span>
                 <h1 id="titulo">NOVA DESPESA</h1>
             </div>
         </header>
@@ -44,23 +44,24 @@
         </div>
 
         <div id="seletor-metodo-pagamento" class="grupo-botoes pagamento" >
-            <label>
-                <input type="radio" name="metodo_pagamento" value="3" hidden required>
-                <div class="btn-verde-cor1" aria-label="Cartão de Crédito"> <i class="ph ph-credit-card"></i>
-                </div>
-            </label>
 
             <label>
                 <input type="radio" name="metodo_pagamento" value="1" hidden>
-                <div class="btn-verde-cor2" aria-label="Dinheiro">
+                <div id="dinheiro-nota" class="btn-verde-cor1" aria-label="Dinheiro">
                     <i class="ph ph-money"></i>
                 </div>
             </label>
 
             <label>
                 <input type="radio" name="metodo_pagamento" value="2" hidden>
-                <div class="btn-verde-cor3" aria-label="Pix">
+                <div id="pix" class="btn-verde-cor2" aria-label="Pix">
                     <i class="ph ph-pix-logo"></i>
+                </div>
+            </label>            
+
+            <label>
+                <input type="radio" name="metodo_pagamento" value="3" hidden required>
+                <div id="cartao" class="btn-verde-cor3" aria-label="Cartão de Crédito"> <i class="ph ph-credit-card"></i>
                 </div>
             </label>
         </div>
@@ -68,22 +69,43 @@
         <div id="seletor-tipo-de-gasto" class="grupo-botoes gastos">
             <label>
                 <input type="radio" name="tipo_gasto" value="investimento" hidden>
-                <div class="btn-verde-cor1" aria-label="Investimento">
+                <div id="investimento" class="btn-verde-cor1" aria-label="Investimento">
                     <i class="ph ph-trend-up"></i>
                 </div>
             </label>
-            </div>
+
+            <label>
+                <input type="radio" name="tipo_gasto" value="nao-essenciais" hidden>
+                <div id="nao-essencial" class="btn-verde-cor3" aria-label="Não essenciais">
+                    <i class="ph ph-shopping-cart"></i>
+                </div>
+            </label>
+
+            <label>
+                <input type="radio" name="tipo_gasto" value="essenciais" hidden>
+                <div id="essenciais" class="btn-verde-cor2" aria-label="Essenciais">
+                    <i class="ph ph-house"></i>
+                </div>
+            </label>
+
+            <label>
+                <input type="radio" name="tipo_gasto" value="fixos" hidden required>
+                <div id="fixos" class="btn-verde-cor1" aria-label="Boleto/Fixos">
+                    <i class="ph ph-barcode"></i>
+                </div>
+            </label>
+        </div>
 
         <div id="botoes-fim">
             <button type="reset" id="btn-cancelar">CANCELAR</button>
-            <a href="pages/historico.html" id="btn-historico" style="display:inline-block; text-align:center; text-decoration:none;">HISTÓRICO</a>
+            <button id="btn-historico"> <a href="pages/historico.html">HISTÓRICO</a></button>
             <button type="submit" id="btn-salvar">SALVAR</button>
         </div>
     </form>
 
     <footer>
         <p id="creditos">Desenvolvido por &copy; 2025</p>
-        <a href="https://www.linkedin.com/in/kaich-h-costa/" target="_blank">alterar link 
+        <a href="https://www.linkedin.com/in/kaich-h-costa/" target="_blank">
             <img src="/assets/kode-sistemas.png" alt="logo">
         </a>
         

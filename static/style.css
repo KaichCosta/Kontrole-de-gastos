@@ -448,3 +448,80 @@ a > img {
     display: block;
 
 }
+
+/* Fundo escuro atrás do modal */
+.modal-overlay {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Preto semitransparente */
+    z-index: 1000; /* Fica em cima de tudo */
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(3px); /* Efeito de desfoque moderno */
+}
+
+/* A caixinha branca do modal */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 90%;
+    max-width: 300px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    animation: surgimento 0.3s ease-out;
+}
+
+/* Animação suave de entrada */
+@keyframes surgimento {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.opcoes-cartao {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    gap: 10px;
+}
+
+/* Estilo dos botões dentro do modal */
+.btn-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    width: 80px;
+}
+
+/* Quando selecionado (radio checked) dentro do modal */
+input[type="radio"]:checked + .btn-modal {
+    background-color: #e0f2f1; /* Verde clarinho */
+    border-color: #00897b;
+    color: #00897b;
+    font-weight: bold;
+}
+
+.btn-cancelar {
+    background: transparent;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+/* Classe utilitária para quando o cartão genérico estiver "ativo" */
+.cartao-selecionado {
+    background-color: #00897b !important;
+    color: white !important;
+    border: 2px solid #004d40;
+}

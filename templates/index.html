@@ -59,11 +59,35 @@
                 </div>
             </label>            
 
-            <label>
-                <input type="radio" name="metodo_pagamento" value="3" hidden required>
-                <div id="cartao" class="btn-verde-cor3" aria-label="Cartão de Crédito"> <i class="ph ph-credit-card"></i>
+            <div class="btn-verde-cor3" id="btn-verde-cor3" id="cartao" onclick="abrirModalCartao()">
+                <i class="ph ph-cards"></i>
+            </div>
+        </div>
+
+        <div id="modal-overlay" class="modal-overlay" onclick="fecharModalFora(event)">
+            <div class="modal-content">
+                <h3>Qual tipo de cartão?</h3>
+                
+                <div class="opcoes-cartao">
+                    <label title="Cartão de Débito">
+                        <input type="radio" name="metodo_pagamento" value="3" hidden onclick="selecionarCartao('Débito')">
+                        <div class="btn-modal" aria-label="Cartão de Débito"> 
+                            <i class="ph ph-cardholder"></i>
+                            <span>Débito</span>
+                        </div>
+                    </label>
+
+                    <label title="Cartão de Crédito">
+                        <input type="radio" name="metodo_pagamento" value="4" hidden onclick="selecionarCartao('Crédito')">
+                        <div class="btn-modal" aria-label="Cartão de Crédito"> 
+                            <i class="ph ph-credit-card"></i>
+                            <span>Crédito</span>
+                        </div>
+                    </label>
                 </div>
-            </label>
+                
+                <button type="button" class="btn-cancelar" onclick="fecharModal()">Cancelar</button>
+            </div>
         </div>
 
         <div id="seletor-tipo-de-gasto" class="grupo-botoes gastos">

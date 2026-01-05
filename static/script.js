@@ -117,9 +117,64 @@ document.addEventListener('DOMContentLoaded', () => {
     ativarGrupo('#seletor-metodo-pagamento');
     ativarGrupo('#seletor-tipo-de-gasto');
 
+    // ===========
+    //LOGICA MODAL
+    //============
+    const modal = document.getElementById('modal-overlay');
+    const btnCartaoGenerico = document.getElementById('btn-abre-modal-cartao');
 
+    // Função para abrir
+    function abrirModalCartao() {
+        modal.style.display = 'flex'; // Torna visível (flex para centralizar)
+    }
+
+    // Função para fechar
+    function fecharModal() {
+        modal.style.display = 'none';
+    }
+
+    // Fecha se clicar fora da caixinha branca (na parte escura)
+    function fecharModalFora(event) {
+        if (event.target === modal) {
+            fecharModal();
+        }
+    }
+
+    // Função chamada quando escolhe Crédito ou Débito
+    function selecionarCartao(tipo) {
+        // 1. Fecha o modal
+        fecharModal();
+        
+        // 2. Muda a cor do botão genérico para mostrar que foi selecionado
+        // Primeiro remove a seleção visual dos outros (dinheiro/pix) se houver lógica para isso
+        // Adiciona classe de destaque ao botão do cartão
+        btnCartaoGenerico.classList.add('cartao-selecionado');
+        
+        // Opcional: Mudar o ícone do botão principal para refletir a escolha
+        const iconePrincipal = btnCartaoGenerico.querySelector('i');
+        if(tipo === 'Crédito') {
+            iconePrincipal.className = 'ph ph-credit-card';
+        } else {
+            iconePrincipal.className = 'ph ph-cardholder';
+        }
+        
+        console.log(`Você selecionou: ${tipo}`);
+    }
+
+    // Dica extra de Sênior:
+    // Adicione um evento para limpar o estilo do botão 'cartão' se a pessoa clicar em Pix ou Dinheiro depois.
+    const inputsPagamento = document.querySelectorAll('input[name="metodo_pagamento"]');
+    inputsPagamento.forEach(input => {
+        input.addEventListener('change', (e) => {
+            // Se o valor for 1 (Dinheiro) ou 2 (Pix), remove o destaque do botão cartão
+            if (e.target.value === '1' || e.target.value === '2') {
+                btnCartaoGenerico.classList.remove('cartao-selecionado');
+                // Reseta icone
+                btnCartaoGenerico.querySelector('i').className = 'ph ph-cards';
+            }
+        });
+    });
 });
-
 
 
 // adicionar um botão com simbolo de '?' que mostra como usar o app e os tipos de gasto e pagamento
